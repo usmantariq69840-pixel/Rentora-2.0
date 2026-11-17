@@ -1,0 +1,47 @@
+.footer {
+  margin-top: var(--space-20);
+  padding: var(--space-16) 0 var(--space-8);
+  background:
+    radial-gradient(700px 260px at 85% 0%, rgb(20 184 166 / 0.16), transparent 70%),
+    linear-gradient(180deg, #172554 0%, #111c42 100%);
+  box-shadow: 0 -18px 40px -24px rgb(23 37 84 / 0.5);
+  color: var(--text-on-dark-muted);
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;
+  gap: var(--space-10);
+}
+.blurb { max-width: 320px; margin-top: var(--space-4); font-size: var(--text-small); line-height: 1.6; }
+.tagline { margin-top: var(--space-4); font-weight: 650; color: var(--teal-500); letter-spacing: 0.02em; }
+.heading {
+  margin-bottom: var(--space-4);
+  font-size: var(--text-small);
+  font-weight: 650;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #fff;
+}
+.list { display: grid; gap: 10px; font-size: var(--text-small); }
+.list a { display: inline-block; transition: color var(--dur-fast) ease, transform var(--dur-base) var(--ease-out); }
+.list a:hover { color: #fff; transform: translateX(4px); }
+
+.bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-3) var(--space-6);
+  margin-top: var(--space-12);
+  padding-top: var(--space-6);
+  border-top: 1px solid rgb(255 255 255 / 0.12);
+  font-size: var(--text-caption);
+  padding-right: 76px; /* keeps the copyright line clear of the floating chat button */
+}
+
+@media (max-width: 899px) {
+  .grid { grid-template-columns: 1fr 1fr; }
+  .brand { grid-column: 1 / -1; }
+}
+@media (max-width: 599px) {
+  .footer { margin-top: var(--space-16); }
+}

@@ -1,0 +1,43 @@
+.panel { position: relative; overflow: hidden; border-radius: var(--radius-lg); border: 1px solid #c7d2fe; background: linear-gradient(135deg, #f5f3ff 0%, var(--teal-50) 100%); }
+.panel::before { content: ''; position: absolute; inset: 0 0 auto 0; height: 3px; background: linear-gradient(90deg, var(--teal-500), #6366f1, var(--teal-500)); background-size: 200% 100%; animation: shimmer 4s linear infinite; }
+.head { display: flex; gap: 14px; align-items: flex-start; padding: 22px 24px 0; }
+.head h3 { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: 1.0625rem; }
+.head p { margin-top: 4px; font-size: var(--text-small); color: var(--text-secondary); line-height: 1.55; }
+.optional { padding: 2px 8px; border-radius: var(--radius-pill); background: rgb(15 23 42 / 0.07); font-size: 0.6875rem; font-weight: 700; color: var(--text-secondary); }
+.icon { display: grid; place-items: center; flex: none; width: 44px; height: 44px; border-radius: 12px; background: #fff; color: var(--teal-700); box-shadow: var(--shadow-sm); }
+.body { display: grid; gap: 14px; padding: 18px 24px 24px; }
+.source { display: flex; gap: 8px; align-items: flex-start; font-size: var(--text-small); color: var(--text-secondary); }
+.source svg { flex: none; margin-top: 2px; color: var(--teal-700); }
+.actions { display: flex; flex-wrap: wrap; gap: 10px; }
+
+.loading { display: flex; align-items: center; gap: 14px; padding: 14px 16px; border-radius: var(--radius-md); background: #fff; font-weight: 600; animation: fadeUp 300ms var(--ease-out); }
+.loading > div { flex: 1; min-width: 0; }
+.spin { flex: none; color: var(--teal-700); animation: spin 1s linear infinite; }
+.bar { display: block; height: 4px; margin-top: 8px; border-radius: 2px; background: linear-gradient(90deg, var(--border) 0%, var(--teal-500) 50%, var(--border) 100%); background-size: 200% 100%; animation: shimmer 1.2s linear infinite; }
+
+.error { display: flex; gap: 12px; align-items: flex-start; padding: 14px 16px; border-radius: var(--radius-md); background: var(--danger-bg); color: #7f1d1d; font-size: var(--text-small); animation: fadeUp 300ms var(--ease-out); }
+.error > svg { flex: none; margin-top: 1px; color: var(--danger); }
+.safe { margin-top: 4px; opacity: 0.85; }
+.errorActions { margin-top: 10px; }
+
+.applied { display: flex; gap: 8px; align-items: flex-start; padding: 12px 14px; border-radius: var(--radius-md); background: var(--success-bg); color: var(--success); font-size: var(--text-small); font-weight: 500; animation: fadeUp 300ms var(--ease-out); }
+.applied svg { flex: none; margin-top: 2px; }
+
+.review { display: grid; gap: 12px; padding: 18px; border-radius: var(--radius-md); background: #fff; box-shadow: var(--shadow-sm); animation: fadeUp 360ms var(--ease-out); }
+.review h4 { font-size: 1rem; }
+.reviewNote { font-size: var(--text-small); color: var(--text-secondary); }
+.review > ul { display: grid; gap: 8px; }
+.review > ul > li { animation: fadeUp 420ms var(--ease-out) both; }
+.review label { display: flex; gap: 12px; align-items: flex-start; padding: 12px 14px; border: 1.5px solid var(--border); border-radius: var(--radius-md); cursor: pointer; transition: border-color var(--dur-fast) ease, background var(--dur-fast) ease; }
+.review label:hover { border-color: var(--teal-500); }
+.review label:has(input:checked) { border-color: var(--teal-700); background: var(--teal-50); }
+.review input { flex: none; width: 18px; height: 18px; margin-top: 2px; accent-color: var(--teal-700); }
+.rowBody { display: grid; gap: 3px; min-width: 0; }
+.rowLabel { font-size: var(--text-caption); font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--text-secondary); }
+.rowText { font-size: var(--text-small); color: var(--text-primary); line-height: 1.55; overflow-wrap: anywhere; }
+.tag { display: inline-block; margin: 0 6px 4px 0; padding: 2px 10px; border-radius: var(--radius-pill); background: var(--surface-muted); font-size: var(--text-caption); font-weight: 600; }
+.confirm { padding: 12px 14px; border-radius: var(--radius-md); background: var(--warning-bg); color: #78350f; font-size: var(--text-small); }
+.confirm p { font-weight: 700; margin-bottom: 4px; }
+.confirm ul { display: grid; gap: 2px; padding-left: 18px; list-style: disc; }
+
+@media (max-width: 599px) { .head, .body { padding-inline: 16px; } .loading { flex-wrap: wrap; } }

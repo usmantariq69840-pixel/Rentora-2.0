@@ -1,0 +1,43 @@
+.panel { display: grid; gap: var(--space-6); }
+.top { display: flex; align-items: center; justify-content: space-between; min-height: 20px; }
+.top:empty { display: none; }
+.title { font-size: 1.0625rem; }
+.clear { border: 0; background: transparent; color: var(--teal-700); font-size: var(--text-small); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+
+.group { min-width: 0; margin: 0; padding: 0; border: 0; }
+.group legend { padding: 0; margin-bottom: 10px; font-size: var(--text-small); font-weight: 650; }
+
+.radio {
+  display: flex; align-items: center; gap: 10px;
+  padding: 8px 10px; margin-inline: -10px;
+  border-radius: var(--radius-sm);
+  font-size: var(--text-small); cursor: pointer;
+  transition: background var(--dur-fast) ease;
+}
+.radio:hover { background: var(--surface-muted); }
+.radio input { accent-color: var(--teal-700); width: 16px; height: 16px; margin: 0; }
+.radio span { flex: 1; }
+.radio small { color: var(--text-secondary); font-size: var(--text-caption); }
+.radio:has(input:checked) { background: var(--teal-50); color: var(--teal-800); font-weight: 600; }
+
+.prices { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 8px; }
+.dash { color: var(--text-secondary); }
+.money {
+  display: flex; align-items: center; gap: 6px; height: 42px; padding: 0 12px;
+  background: var(--surface); border: 1.5px solid var(--border-strong); border-radius: var(--radius-sm);
+  transition: border-color var(--dur-fast) ease, box-shadow var(--dur-base) var(--ease-out);
+}
+.money:focus-within { border-color: var(--teal-700); box-shadow: 0 0 0 4px rgb(20 184 166 / 0.18); }
+.money b { font-size: var(--text-caption); color: var(--text-secondary); font-weight: 600; }
+.money input { width: 100%; min-width: 0; border: 0; outline: none; background: transparent; font-size: var(--text-small); }
+
+.dates { display: grid; gap: 10px; }
+.dates label { display: grid; gap: 4px; font-size: var(--text-caption); font-weight: 600; color: var(--text-secondary); }
+.dates input {
+  height: 42px; padding: 0 12px; background: var(--surface);
+  border: 1.5px solid var(--border-strong); border-radius: var(--radius-sm);
+  font-size: var(--text-small); color: var(--text-primary);
+}
+.dates input:focus-visible { outline: none; border-color: var(--teal-700); box-shadow: 0 0 0 4px rgb(20 184 166 / 0.18); }
+.hint { margin-top: 8px; font-size: var(--text-caption); color: var(--text-secondary); line-height: 1.5; }
+.error { margin-top: 8px; font-size: var(--text-caption); font-weight: 500; color: var(--danger); }

@@ -1,0 +1,25 @@
+.header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-bottom: var(--space-8);
+}
+.eyebrow {
+  margin-bottom: 6px;
+  font-size: var(--text-caption);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--teal-700);
+  background: var(--gradient-brand-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  width: fit-content;
+}
+.sub { margin-top: 6px; max-width: 560px; color: var(--text-secondary); }
+.action { flex: none; }
+@media (max-width: 599px) {
+  .header { margin-bottom: var(--space-6); }
+}

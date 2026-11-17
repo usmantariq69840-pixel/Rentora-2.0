@@ -1,0 +1,138 @@
+.root {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 200; /* above the sticky bars, below modals (300) and toasts (400) */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 14px;
+}
+
+.fab {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  border: 0;
+  border-radius: 50%;
+  color: #fff;
+  background: var(--gradient-primary);
+  box-shadow: var(--highlight), var(--shadow-teal);
+  transition: transform var(--dur-base) var(--ease-spring), box-shadow var(--dur-base) var(--ease-out);
+  animation: popIn 520ms var(--ease-spring) 600ms both;
+}
+.fab::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: var(--teal-500);
+  opacity: 0.5;
+  z-index: -1;
+  animation: chatPulse 2.6s ease-out 1.6s 3;
+}
+.fab:hover { transform: translateY(-3px) scale(1.06); box-shadow: var(--highlight), 0 16px 32px -8px rgb(15 118 110 / 0.7); }
+.fab:active { transform: scale(0.96); }
+.fab:focus-visible { outline: 3px solid var(--navy-900); outline-offset: 3px; }
+
+.icon { position: absolute; display: grid; place-items: center; transition: transform 320ms var(--ease-spring), opacity 200ms ease; }
+.iconClose { opacity: 0; transform: rotate(-90deg) scale(0.5); }
+.fabOpen .iconChat { opacity: 0; transform: rotate(90deg) scale(0.5); }
+.fabOpen .iconClose { opacity: 1; transform: none; }
+
+.panel {
+  width: min(340px, calc(100vw - 32px));
+  overflow: hidden;
+  background: var(--gradient-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  transform-origin: bottom right;
+  animation: scaleIn 260ms var(--ease-spring) both;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 16px 16px 18px;
+  color: #fff;
+  background:
+    radial-gradient(240px 120px at 100% 0%, rgb(20 184 166 / 0.35), transparent 70%),
+    var(--gradient-navy);
+}
+.head h2 { font-size: 1rem; font-weight: 700; color: #fff; letter-spacing: -0.01em; }
+.head p { font-size: var(--text-caption); color: var(--text-on-dark-muted); }
+.avatar {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  color: var(--navy-900);
+  background: var(--gradient-accent);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.5);
+}
+.close {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  margin-left: auto;
+  border: 0;
+  border-radius: 50%;
+  background: rgb(255 255 255 / 0.1);
+  color: #fff;
+  transition: background var(--dur-fast) ease;
+}
+.close:hover { background: rgb(255 255 255 / 0.2); }
+.close:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+
+.body { display: grid; justify-items: start; gap: 8px; padding: 20px 18px 20px; }
+.soon {
+  display: inline-flex;
+  align-items: center;
+  height: 24px;
+  padding: 0 10px;
+  border-radius: var(--radius-pill);
+  background: var(--gradient-amber);
+  color: #78350f;
+  font-size: var(--text-caption);
+  font-weight: 700;
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.5), 0 3px 8px -2px rgb(245 158 11 / 0.5);
+}
+.title { font-size: 1.125rem; font-weight: 700; color: var(--navy-900); letter-spacing: -0.02em; }
+.text { font-size: var(--text-small); line-height: 1.55; color: var(--text-secondary); }
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+  padding: 9px 14px;
+  border-radius: var(--radius-pill);
+  background: var(--gradient-tint);
+  box-shadow: inset 0 0 0 1px #bfe9e6;
+  color: var(--teal-800);
+  font-size: var(--text-small);
+  font-weight: 650;
+  transition: transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out);
+}
+.link:hover { transform: translateY(-1px); box-shadow: inset 0 0 0 1px var(--teal-500), var(--shadow-sm); }
+
+@keyframes chatPulse {
+  0% { transform: scale(1); opacity: 0.45; }
+  100% { transform: scale(1.7); opacity: 0; }
+}
+
+/* the sticky booking bar on item pages is about 70px tall on small screens */
+@media (max-width: 899px) {
+  .lifted { bottom: 92px; }
+}
+@media (max-width: 599px) {
+  .root { right: 16px; bottom: 16px; }
+  .lifted { bottom: 88px; }
+  .fab { width: 54px; height: 54px; }
+}

@@ -1,0 +1,14 @@
+.section { padding: 28px; background: var(--gradient-card); border: 1px solid var(--border); border-radius: var(--radius-xl); box-shadow: var(--shadow-card); }
+.section h2 { font-size: 1.25rem; margin-bottom: 16px; }
+.form { display: grid; gap: 18px; animation: fadeUp 420ms var(--ease-out) both; }
+.lead { color: var(--text-secondary); font-size: var(--text-small); line-height: 1.6; }
+.formError { padding: 10px 14px; border-radius: var(--radius-md); background: var(--danger-bg); color: var(--danger); font-size: var(--text-small); font-weight: 500; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-top: 4px; }
+.form + .grid { margin-top: 22px; }
+.card { display: grid; gap: 8px; align-content: start; padding: 16px 18px; border: 1px solid var(--border); border-radius: var(--radius-lg); background: var(--surface-muted); animation: scaleIn 420ms var(--ease-spring) both; }
+.cardTitle { font-size: var(--text-caption); font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-secondary); }
+.comment { font-size: var(--text-small); line-height: 1.65; color: #334155; overflow-wrap: anywhere; white-space: pre-line; }
+.noComment, .quiet { font-size: var(--text-small); color: var(--text-secondary); }
+.quiet { margin-top: 12px; }
+.time { font-size: var(--text-caption); color: var(--text-secondary); }
+@media (max-width: 599px) { .section { padding: 22px 18px; } }

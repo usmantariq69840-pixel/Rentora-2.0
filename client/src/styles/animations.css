@@ -1,0 +1,92 @@
+/* ==========================================================================
+   Shared keyframes and scroll-reveal utilities.
+   Everything here is switched off for people who prefer reduced motion.
+   ========================================================================== */
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.94); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.6); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-12px); }
+}
+@keyframes drift {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50%      { transform: translate3d(30px, -24px, 0) scale(1.08); }
+}
+@keyframes shimmer {
+  from { background-position: -400px 0; }
+  to   { background-position: 400px 0; }
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+@keyframes pulseRing {
+  0%   { box-shadow: 0 0 0 0 rgb(20 184 166 / 0.5); }
+  100% { box-shadow: 0 0 0 14px rgb(20 184 166 / 0); }
+}
+@keyframes heartPop {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.35); }
+  100% { transform: scale(1); }
+}
+@keyframes blink {
+  50% { opacity: 0; }
+}
+@keyframes drawLine {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+/* Route change. Opacity only: a lingering transform would make `position: fixed` children
+   (like the mobile booking bar) anchor to <main> instead of the screen. */
+.page-enter { animation: fadeIn 380ms ease both; }
+
+/* Scroll reveal — driven by the <Reveal> component / useReveal hook */
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition:
+    opacity 700ms var(--ease-out) var(--reveal-delay, 0ms),
+    transform 700ms var(--ease-out) var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+.reveal.is-visible { opacity: 1; transform: none; }
+.reveal[data-from='left']  { transform: translateX(-32px); }
+.reveal[data-from='right'] { transform: translateX(32px); }
+.reveal[data-from='scale'] { transform: scale(0.94); }
+.reveal[data-from].is-visible { transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    transition-delay: 0ms !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+}
+
+/* Uses the individual `translate` property so it never fights a `transform` */
+@keyframes bob {
+  0%, 100% { translate: 0 0; }
+  50%      { translate: 0 -14px; }
+}
+@keyframes enter {
+  from { opacity: 0; scale: 0.9; }
+  to   { opacity: 1; scale: 1; }
+}

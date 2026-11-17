@@ -1,0 +1,15 @@
+.page { padding-block: var(--space-8) var(--space-16); }
+.header { display: flex; align-items: flex-end; justify-content: space-between; gap: var(--space-4); margin-bottom: var(--space-6); }
+.header p { margin-top: 6px; color: var(--text-secondary); }
+.panel { margin-top: var(--space-6); }
+.list { display: grid; gap: 14px; }
+.skeleton {
+  height: 132px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(90deg, #eef2f7 0%, #f8fafc 40%, #eef2f7 80%);
+  background-size: 800px 100%;
+  animation: shimmer 1.4s linear infinite;
+}
+@media (max-width: 599px) {
+  .header { flex-direction: column; align-items: flex-start; }
+}

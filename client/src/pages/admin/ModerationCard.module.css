@@ -1,0 +1,35 @@
+.card { display: grid; grid-template-columns: 280px minmax(0, 1fr); gap: 24px; padding: 20px; background: var(--gradient-card); border: 1px solid var(--border); border-radius: var(--radius-xl); box-shadow: var(--shadow-card); animation: fadeUp 520ms var(--ease-out) both; transition: box-shadow var(--dur-base) var(--ease-out); }
+.card:hover { box-shadow: var(--shadow-md); }
+.media { display: grid; gap: 10px; align-content: start; }
+.photo { overflow: hidden; border-radius: var(--radius-lg); aspect-ratio: 4 / 3; }
+.thumbs { display: flex; flex-wrap: wrap; gap: 8px; }
+.thumbs button { padding: 0; width: 52px; height: 40px; border: 2px solid transparent; border-radius: 8px; overflow: hidden; opacity: 0.75; background: none; transition: opacity var(--dur-fast) ease, border-color var(--dur-fast) ease; }
+.thumbs button:hover { opacity: 1; }
+.thumbs img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.thumbOn { border-color: var(--teal-500) !important; opacity: 1 !important; }
+.noPhoto { font-size: var(--text-caption); color: var(--text-secondary); }
+.body { display: grid; gap: 14px; min-width: 0; align-content: start; }
+.head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px 16px; }
+.head h3 { font-size: 1.125rem; overflow-wrap: anywhere; }
+.meta { margin-top: 4px; font-size: var(--text-small); color: var(--text-secondary); }
+.badges { display: flex; flex-wrap: wrap; gap: 6px; align-items: flex-start; }
+.flag { display: inline-flex; align-items: center; gap: 4px; height: 24px; padding: 0 10px; border-radius: var(--radius-pill); background: var(--danger-bg); color: var(--danger); font-size: var(--text-caption); font-weight: 650; }
+.facts { display: flex; flex-wrap: wrap; gap: 8px 28px; margin: 0; }
+.facts dt { font-size: var(--text-caption); font-weight: 600; color: var(--text-secondary); }
+.facts dd { display: flex; align-items: center; gap: 4px; margin: 2px 0 0; font-size: var(--text-small); font-weight: 650; }
+.description { font-size: var(--text-small); line-height: 1.7; color: #334155; overflow-wrap: anywhere; white-space: pre-line; }
+.more { display: inline-flex; align-items: center; gap: 4px; justify-self: start; margin-top: -8px; border: 0; background: none; font-size: var(--text-small); font-weight: 650; color: var(--teal-700); }
+.more:hover { text-decoration: underline; text-underline-offset: 3px; }
+.flip { transform: rotate(180deg); }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.spec, .tag { padding: 3px 10px; border-radius: var(--radius-pill); background: var(--surface-muted); font-size: var(--text-caption); }
+.spec b { font-weight: 650; }
+.tag { background: var(--teal-50); color: var(--teal-800); font-weight: 600; }
+.owner { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: var(--radius-md); background: var(--surface-muted); }
+.owner div { display: grid; font-size: var(--text-small); }
+.owner span { font-size: var(--text-caption); color: var(--text-secondary); }
+.actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 12px; padding-top: 4px; }
+.open { display: inline-flex; align-items: center; gap: 5px; margin-left: auto; font-size: var(--text-small); font-weight: 650; color: var(--teal-700); }
+.open:hover { text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 899px) { .card { grid-template-columns: 1fr; } .photo { max-width: 420px; } }
+@media (max-width: 599px) { .card { padding: 16px; gap: 18px; } .open { margin-left: 0; } .actions > button { flex: 1 1 140px; } }

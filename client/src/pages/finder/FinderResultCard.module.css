@@ -1,0 +1,9 @@
+.wrap { display: flex; flex-direction: column; gap: 10px; animation: fadeUp 560ms var(--ease-out) both; }
+.why { display: grid; gap: 10px; padding: 14px 16px 16px; background: var(--gradient-card); border: 1px solid var(--border); border-radius: var(--radius-lg); box-shadow: var(--shadow-card); }
+.heading { font-size: var(--text-caption); font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--text-secondary); }
+.why ul { display: grid; gap: 6px; }
+.why li { display: flex; gap: 8px; align-items: flex-start; font-size: var(--text-small); color: #334155; line-height: 1.45; }
+.why li svg { flex: none; margin-top: 2px; color: var(--teal-700); }
+.estimate { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 8px; padding: 10px 12px; border-radius: var(--radius-md); background: var(--teal-50); font-size: var(--text-small); color: #134e4a; }
+.estimate strong { font-size: 1.0625rem; color: var(--navy-900); }
+.estimate small { flex-basis: 100%; font-size: var(--text-caption); color: var(--text-secondary); }

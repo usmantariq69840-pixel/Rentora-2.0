@@ -1,0 +1,119 @@
+/* ==========================================================================
+   Rentora design tokens — single source of truth for colour, type, spacing,
+   shape, shadow and motion. Every component reads from these variables.
+   ========================================================================== */
+:root {
+  /* Brand */
+  --navy-900: #172554;
+  --navy-800: #1e3a5f;
+  --teal-500: #14b8a6;
+  --teal-700: #0f766e;
+  --teal-800: #115e59;
+  --teal-100: #ccfbf1;
+  --teal-50: #f0fdfa;
+  --amber-500: #f59e0b;
+  --amber-100: #fef3c7;
+
+  /* Surfaces */
+  --background: #f8fafc;
+  --surface: #ffffff;
+  --surface-muted: #f1f5f9;
+  --border: #e2e8f0;
+  --border-strong: #cbd5e1;
+
+  /* Text */
+  --text-primary: #0f172a;
+  --text-secondary: #64748b;
+  --text-on-dark: #ffffff;
+  --text-on-dark-muted: #cbd5e1;
+
+  /* Status (always paired with text or an icon) */
+  --success: #15803d;
+  --success-bg: #dcfce7;
+  --warning: #b45309;
+  --warning-bg: #fef3c7;
+  --danger: #b91c1c;
+  --danger-bg: #fee2e2;
+  --info: #1d4ed8;
+  --info-bg: #dbeafe;
+
+  /* Focus ring: teal-700 has 5:1 contrast on white; dark sections override it */
+  --focus-ring: var(--teal-700);
+
+  /* Type */
+  --font-sans: 'Inter Variable', Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --text-display: clamp(2.5rem, 1.6rem + 3.4vw, 3.5rem);
+  --text-h1: clamp(1.875rem, 1.5rem + 1.4vw, 2.25rem);
+  --text-h2: clamp(1.5rem, 1.3rem + 0.8vw, 1.75rem);
+  --text-h3: 1.125rem;
+  --text-body: 1rem;
+  --text-small: 0.875rem;
+  --text-caption: 0.75rem;
+
+  /* 8-point spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+
+  /* Shape */
+  --radius-sm: 10px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-pill: 999px;
+
+  /* Elevation — layered shadows: a tight contact shadow plus a soft, navy-tinted ambient one */
+  --shadow-xs: 0 1px 2px rgb(15 23 42 / 0.06);
+  --shadow-sm: 0 1px 2px rgb(15 23 42 / 0.06), 0 3px 8px -2px rgb(23 37 84 / 0.08);
+  --shadow-card: 0 1px 2px rgb(15 23 42 / 0.05), 0 6px 14px -4px rgb(23 37 84 / 0.09), 0 16px 32px -16px rgb(23 37 84 / 0.12);
+  --shadow-md: 0 2px 4px rgb(15 23 42 / 0.05), 0 12px 24px -6px rgb(23 37 84 / 0.16), 0 4px 10px -4px rgb(15 23 42 / 0.08);
+  --shadow-lg: 0 4px 8px rgb(15 23 42 / 0.05), 0 30px 56px -14px rgb(23 37 84 / 0.32), 0 12px 24px -10px rgb(15 23 42 / 0.14);
+  --shadow-xl: 0 8px 16px rgb(15 23 42 / 0.08), 0 48px 96px -24px rgb(23 37 84 / 0.5);
+  --shadow-teal: 0 12px 26px -8px rgb(15 118 110 / 0.6), 0 4px 8px -2px rgb(15 118 110 / 0.25);
+  --shadow-teal-rest: 0 4px 10px -2px rgb(15 118 110 / 0.35), 0 1px 2px rgb(15 118 110 / 0.2);
+  --shadow-navy-rest: 0 4px 10px -2px rgb(23 37 84 / 0.4), 0 1px 2px rgb(23 37 84 / 0.2);
+  --shadow-danger-rest: 0 4px 10px -2px rgb(185 28 28 / 0.35), 0 1px 2px rgb(185 28 28 / 0.2);
+  --highlight: inset 0 1px 0 rgb(255 255 255 / 0.22);
+
+  /* Gradients. Filled-button gradients stay dark enough for white text (4.5:1 or better) */
+  --gradient-primary: linear-gradient(180deg, #12827a 0%, #0f766e 55%, #0d665f 100%);
+  --gradient-primary-hover: linear-gradient(180deg, #0f766e 0%, #0d6962 55%, #0b5a54 100%);
+  --gradient-accent: linear-gradient(180deg, #5eead4 0%, #2dd4bf 45%, #14b8a6 100%);
+  --gradient-navy: linear-gradient(135deg, #1e3a8a 0%, #172554 60%, #14213f 100%);
+  --gradient-navy-soft: linear-gradient(135deg, #1e3a5f 0%, #172554 100%);
+  --gradient-danger: linear-gradient(180deg, #c92a2a 0%, #b91c1c 55%, #991b1b 100%);
+  --gradient-amber: linear-gradient(135deg, #fde68a 0%, #fbbf24 55%, #f59e0b 100%);
+  --gradient-card: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+  --gradient-tint: linear-gradient(135deg, #f0fdfa 0%, #eff6ff 100%);
+  --gradient-chip: linear-gradient(135deg, #ccfbf1 0%, #bae6fd 100%);
+  --gradient-brand-text: linear-gradient(95deg, #0f766e 0%, #14b8a6 50%, #0ea5e9 100%);
+
+  /* Layout */
+  --container: 1240px;
+  --gutter: 48px;
+  --header-h: 72px;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --dur-fast: 150ms;
+  --dur-base: 260ms;
+  --dur-slow: 600ms;
+}
+
+@media (max-width: 1199px) {
+  :root { --gutter: 32px; }
+}
+@media (max-width: 899px) {
+  :root { --gutter: 24px; --header-h: 64px; }
+}
+@media (max-width: 599px) {
+  :root { --gutter: 16px; }
+}

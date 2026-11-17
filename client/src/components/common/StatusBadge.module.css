@@ -1,0 +1,19 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  height: 24px;
+  padding: 0 10px;
+  border-radius: var(--radius-pill);
+  font-size: var(--text-caption);
+  font-weight: 600;
+  white-space: nowrap;
+  box-shadow: inset 0 0 0 1px rgb(15 23 42 / 0.06), 0 1px 2px rgb(15 23 42 / 0.05);
+}
+.pending { background: linear-gradient(135deg, #fffbeb, #fef3c7); color: var(--warning); }
+.approved, .completed { background: linear-gradient(135deg, #f0fdf4, #dcfce7); color: var(--success); }
+.declined, .cancelled { background: linear-gradient(135deg, #fef2f2, #fee2e2); color: var(--danger); }
+.hidden, .unverified { background: linear-gradient(135deg, #f8fafc, #f1f5f9); color: var(--text-secondary); }
+.verified { background: linear-gradient(135deg, #eff6ff, #dbeafe); color: var(--info); }
+/* Amber is reserved for featured / promotion labels */
+.featured { background: var(--gradient-amber); color: #78350f; box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.5), 0 3px 8px -2px rgb(245 158 11 / 0.55); }

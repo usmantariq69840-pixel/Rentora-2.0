@@ -1,0 +1,43 @@
+.list { display: grid; }
+.step {
+  position: relative;
+  display: flex;
+  gap: 16px;
+  padding-bottom: 22px;
+  animation: fadeUp 480ms var(--ease-out) both;
+}
+.step:last-child { padding-bottom: 0; }
+/* connector line to the next step */
+.step:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  left: 13px;
+  top: 30px;
+  bottom: 2px;
+  width: 2px;
+  background: var(--border);
+  transform-origin: top;
+  animation: grow 500ms var(--ease-out) both;
+  animation-delay: inherit;
+}
+.done:not(:last-child)::before { background: var(--teal-500); }
+@keyframes grow { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+
+.node {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid var(--border-strong);
+  background: var(--surface);
+  color: #fff;
+}
+.done .node { background: var(--teal-700); border-color: var(--teal-700); }
+.stopped .node { background: var(--danger); border-color: var(--danger); }
+.current .node { border-color: var(--teal-500); }
+.pulse { width: 10px; height: 10px; border-radius: 50%; background: var(--teal-500); animation: pulseRing 1.6s ease-out infinite; }
+.step strong { display: block; font-size: var(--text-small); padding-top: 4px; }
+.todo strong { color: var(--text-secondary); font-weight: 550; }
+.step p { margin-top: 2px; font-size: var(--text-small); color: var(--text-secondary); }

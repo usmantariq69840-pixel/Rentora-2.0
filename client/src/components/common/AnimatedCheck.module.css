@@ -1,0 +1,18 @@
+.check { color: var(--teal-700); }
+.circle {
+  stroke: currentColor;
+  stroke-width: 2.5;
+  stroke-dasharray: 151;
+  stroke-dashoffset: 151;
+  animation: draw 600ms var(--ease-out) forwards;
+}
+.tick {
+  stroke: currentColor;
+  stroke-width: 3.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 40;
+  stroke-dashoffset: 40;
+  animation: draw 380ms var(--ease-out) 450ms forwards;
+}
+@keyframes draw { to { stroke-dashoffset: 0; } }

@@ -1,0 +1,8 @@
+.nav ol { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; font-size: var(--text-small); color: var(--text-secondary); }
+.nav li { display: inline-flex; align-items: center; gap: 4px; min-width: 0; }
+.nav a { padding: 2px 4px; border-radius: 6px; transition: color var(--dur-fast) ease, background var(--dur-fast) ease; }
+.nav a:hover { color: var(--teal-700); background: var(--teal-50); }
+.nav [aria-current] { font-weight: 600; color: var(--text-primary); max-width: 38ch; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.dark ol { color: var(--text-on-dark-muted); }
+.dark a:hover { color: #fff; background: rgb(255 255 255 / 0.12); }
+.dark [aria-current] { color: #fff; }

@@ -1,0 +1,27 @@
+.zone {
+  display: grid; justify-items: center; gap: 6px; padding: 32px 20px; text-align: center;
+  border: 2px dashed var(--border-strong); border-radius: var(--radius-lg); background: var(--surface-muted);
+  transition: border-color var(--dur-fast) ease, background var(--dur-fast) ease, transform var(--dur-base) var(--ease-out);
+}
+.zone:hover { border-color: var(--teal-500); }
+.over { border-color: var(--teal-700); background: var(--teal-50); transform: scale(1.01); }
+.full { opacity: 0.7; }
+.zoneIcon { display: grid; place-items: center; width: 56px; height: 56px; border-radius: 16px; background: var(--teal-100); color: var(--teal-700); animation: floatY 4s ease-in-out infinite; }
+.zoneTitle { font-weight: 650; }
+.zoneHint { font-size: var(--text-small); color: var(--text-secondary); }
+.choose { margin-top: 8px; height: 42px; padding: 0 20px; border: 1.5px solid var(--border-strong); border-radius: var(--radius-md); background: var(--surface); font-weight: 600; transition: border-color var(--dur-fast) ease, color var(--dur-fast) ease, transform var(--dur-base) var(--ease-out); }
+.choose:hover:not(:disabled) { border-color: var(--teal-700); color: var(--teal-700); transform: translateY(-2px); }
+.choose:disabled { opacity: 0.5; cursor: not-allowed; }
+.problems { display: grid; gap: 4px; margin-top: 12px; padding: 12px 14px; border-radius: var(--radius-md); background: var(--danger-bg); color: var(--danger); font-size: var(--text-small); font-weight: 500; animation: fadeUp 240ms var(--ease-out); }
+.count { margin: 18px 0 10px; font-size: var(--text-small); color: var(--text-secondary); }
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.tile { position: relative; overflow: hidden; aspect-ratio: 4 / 3; border-radius: var(--radius-md); border: 2px solid transparent; background: var(--surface-muted); animation: scaleIn 420ms var(--ease-spring) both; }
+.tile img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--dur-slow) var(--ease-out); }
+.tile:hover img { transform: scale(1.05); }
+.cover { border-color: var(--teal-500); box-shadow: 0 0 0 3px rgb(20 184 166 / 0.2); }
+.coverBadge { position: absolute; left: 8px; top: 8px; display: inline-flex; align-items: center; gap: 4px; height: 24px; padding: 0 9px; border-radius: var(--radius-pill); background: var(--teal-700); color: #fff; font-size: var(--text-caption); font-weight: 700; }
+.tools { position: absolute; right: 8px; top: 8px; display: flex; gap: 6px; }
+.tools button { display: grid; place-items: center; width: 32px; height: 32px; border: 0; border-radius: 50%; background: rgb(15 23 42 / 0.72); color: #fff; backdrop-filter: blur(6px); transition: background var(--dur-fast) ease, transform var(--dur-base) var(--ease-spring); }
+.tools button:hover { background: var(--navy-900); transform: scale(1.12); }
+.tools button:last-child:hover { background: var(--danger); }
+@media (max-width: 599px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }

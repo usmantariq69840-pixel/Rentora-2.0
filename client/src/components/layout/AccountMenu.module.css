@@ -1,0 +1,64 @@
+.root { position: relative; }
+.trigger {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 3px 6px 3px 3px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  transition: border-color var(--dur-fast) ease, box-shadow var(--dur-base) var(--ease-out);
+}
+.trigger:hover, .open { border-color: var(--teal-500); box-shadow: 0 0 0 4px rgb(20 184 166 / 0.12); }
+.chevron { color: var(--text-secondary); transition: transform var(--dur-base) var(--ease-out); }
+.open .chevron { transform: rotate(180deg); }
+
+.menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  z-index: 120;
+  width: 288px;
+  padding: 8px;
+  background: var(--gradient-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  transform-origin: top right;
+  animation: popIn 220ms var(--ease-spring) both;
+}
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.94) translateY(-6px); }
+  to   { opacity: 1; transform: none; }
+}
+.who {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 6px;
+}
+.who div { display: flex; flex-direction: column; min-width: 0; }
+.who strong { font-size: var(--text-small); }
+.who span { font-size: var(--text-caption); color: var(--text-secondary); overflow: hidden; text-overflow: ellipsis; }
+
+.menu a, .signOut {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 11px 12px;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: none;
+  font-size: var(--text-small);
+  font-weight: 550;
+  text-align: left;
+  transition: background var(--dur-fast) ease, transform var(--dur-base) var(--ease-out);
+}
+.menu a svg, .signOut svg { color: var(--text-secondary); transition: color var(--dur-fast) ease; }
+.menu a:hover, .signOut:hover { background: var(--surface-muted); transform: translateX(3px); }
+.menu a:hover svg { color: var(--teal-700); }
+.signOut { margin-top: 6px; border-top: 1px solid var(--border); border-radius: 0 0 var(--radius-sm) var(--radius-sm); padding-top: 14px; color: var(--danger); }
+.signOut svg { color: var(--danger); }

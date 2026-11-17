@@ -1,0 +1,2 @@
+.row { display: flex; flex-wrap: wrap; gap: 10px; }
+.stacked { flex-direction: column; }

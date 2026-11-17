@@ -1,0 +1,12 @@
+.field { margin: 0; padding: 0; border: 0; min-width: 0; }
+.field legend { padding: 0; margin-bottom: 8px; font-size: var(--text-small); font-weight: 600; }
+.row { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 14px; }
+.stars { display: inline-flex; gap: 2px; }
+.star { position: relative; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 10px; color: #cbd5e1; cursor: pointer; transition: color var(--dur-fast) ease, transform var(--dur-base) var(--ease-spring); }
+.star:hover { transform: scale(1.15); }
+.star input { position: absolute; inset: 0; opacity: 0; cursor: pointer; margin: 0; }
+.star:has(input:focus-visible) { outline: 3px solid var(--focus-ring); outline-offset: 1px; }
+.on { color: var(--amber-500); }
+.word { min-width: 90px; font-size: var(--text-small); font-weight: 600; color: var(--text-secondary); }
+.error { margin-top: 6px; font-size: var(--text-caption); font-weight: 500; color: var(--danger); }
+@media (prefers-reduced-motion: reduce) { .star, .star:hover { transition: none; transform: none; } }

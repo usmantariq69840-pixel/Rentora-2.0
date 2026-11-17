@@ -1,0 +1,52 @@
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--gradient-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  transition:
+    transform var(--dur-base) var(--ease-out),
+    box-shadow var(--dur-base) var(--ease-out),
+    border-color var(--dur-base) ease; box-shadow: var(--shadow-card); }
+.card:hover {
+  transform: translateY(-6px);
+  border-color: var(--teal-500);
+  box-shadow: var(--shadow-lg);
+}
+
+.art {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 16 / 11;
+  background:
+    radial-gradient(90% 80% at 50% 0%, #fff 0%, rgb(255 255 255 / 0) 65%),
+    linear-gradient(160deg, #e8f1fb 0%, #dbeafe 60%, #ccfbf1 150%);
+  overflow: hidden;
+}
+.svg {
+  width: 78%;
+  height: 78%;
+  transition: transform 600ms var(--ease-spring);
+}
+.card:hover .svg { transform: scale(1.1) rotate(-3deg); }
+
+.text { padding: 14px 52px 16px 16px; }
+.name { font-size: 1rem; font-weight: 600; }
+.count { margin-top: 2px; font-size: var(--text-small); color: var(--text-secondary); }
+
+.arrow {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--teal-100);
+  color: var(--teal-700);
+  transition: background var(--dur-base) ease, color var(--dur-base) ease, transform var(--dur-base) var(--ease-spring);
+}
+.card:hover .arrow { background: var(--teal-700); color: #fff; transform: translateX(3px); }

@@ -1,0 +1,18 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
+}
+.mark {
+  flex: none;
+  transition: transform var(--dur-base) var(--ease-spring);
+}
+a.logo:hover .mark { transform: rotate(-6deg) scale(1.08); }
+.word {
+  font-size: 1.35rem;
+  font-weight: 750;
+  letter-spacing: -0.03em;
+  color: var(--navy-900);
+}
+.light { color: #fff; }

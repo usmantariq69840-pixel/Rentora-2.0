@@ -1,0 +1,3 @@
+.stars { display: inline-flex; gap: 2px; }
+.on { color: var(--amber-500); }
+.off { color: var(--border-strong); }

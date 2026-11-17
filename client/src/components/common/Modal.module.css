@@ -1,0 +1,61 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  background: radial-gradient(800px 500px at 50% 30%, rgb(30 58 138 / 0.45), rgb(15 23 42 / 0.68));
+  backdrop-filter: blur(5px);
+  animation: fadeIn 200ms ease both;
+}
+.out { animation: fadeIn 200ms ease reverse both; }
+
+.panel {
+  position: relative;
+  width: 100%;
+  max-height: calc(100dvh - 32px);
+  overflow-y: auto;
+  padding: 28px;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+  border: 1px solid rgb(255 255 255 / 0.9);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  animation: scaleIn 280ms var(--ease-spring) both;
+}
+.out .panel { animation: scaleIn 200ms ease reverse both; }
+.sm { max-width: 420px; }
+.md { max-width: 560px; }
+.lg { max-width: 760px; }
+
+.close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--surface-muted);
+  color: var(--text-secondary);
+  transition: background var(--dur-fast) ease, transform var(--dur-base) var(--ease-spring);
+}
+.close:hover { background: var(--border); transform: rotate(90deg); }
+
+.title { font-size: 1.25rem; padding-right: 44px; }
+.desc { margin-top: 8px; color: var(--text-secondary); font-size: var(--text-small); }
+.body { margin-top: 20px; }
+.footer { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 12px; margin-top: 24px; }
+
+@media (max-width: 599px) {
+  .overlay { align-items: end; padding: 0; }
+  .panel { max-width: none; border-radius: var(--radius-xl) var(--radius-xl) 0 0; padding: 24px 20px; animation-name: sheetUp; }
+  .out .panel { animation-name: sheetUp; }
+  .footer > * { flex: 1; }
+}
+@keyframes sheetUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}

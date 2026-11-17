@@ -1,0 +1,8 @@
+.form { display: grid; gap: 16px; }
+.row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; }
+.link { display: inline-flex; align-items: center; gap: 5px; font-size: var(--text-small); font-weight: 650; color: var(--teal-700); }
+.link:hover { text-decoration: underline; text-underline-offset: 3px; }
+.eye { display: grid; place-items: center; width: 36px; height: 36px; border: 0; border-radius: 8px; background: none; color: var(--text-secondary); }
+.eye:hover { background: var(--surface-muted); color: var(--navy-900); }
+.note { display: flex; gap: 10px; align-items: flex-start; padding: 12px 14px; border-radius: var(--radius-md); background: var(--teal-50); color: #134e4a; font-size: var(--text-caption); line-height: 1.5; }
+.note svg { flex: none; margin-top: 1px; color: var(--teal-700); }

@@ -1,0 +1,39 @@
+.card {
+  display: grid;
+  grid-template-columns: 132px minmax(0, 1fr) auto;
+  gap: 20px;
+  align-items: center;
+  padding: 16px;
+  background: var(--gradient-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  animation: fadeUp 520ms var(--ease-out) both;
+  transition: box-shadow var(--dur-base) var(--ease-out), transform var(--dur-base) var(--ease-out), border-color var(--dur-fast) ease;
+}
+.card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); border-color: var(--border-strong); }
+.media { display: block; overflow: hidden; border-radius: var(--radius-md); aspect-ratio: 4 / 3; }
+.main { display: grid; gap: 8px; min-width: 0; }
+.top { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+.top h3 { font-size: 1.0625rem; }
+.top h3 a:hover { color: var(--teal-700); }
+.person { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: var(--text-small); color: var(--text-secondary); }
+.role { padding: 2px 8px; border-radius: var(--radius-pill); background: var(--surface-muted); font-size: var(--text-caption); font-weight: 600; color: var(--navy-800); }
+.dates { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font-size: var(--text-small); font-weight: 550; }
+.dates svg { color: var(--teal-700); }
+.pay { display: inline-flex; align-items: center; gap: 6px; font-size: var(--text-caption); font-weight: 600; color: var(--warning); }
+.paid { color: var(--success); }
+.conflict { display: inline-flex; align-items: center; gap: 6px; font-size: var(--text-caption); font-weight: 600; color: var(--danger); }
+.side { display: grid; justify-items: end; gap: 10px; text-align: right; }
+.total strong { display: block; font-size: 1.125rem; }
+.total span { font-size: var(--text-caption); color: var(--text-secondary); }
+.view { display: inline-flex; align-items: center; gap: 6px; font-size: var(--text-small); font-weight: 650; color: var(--teal-700); }
+.view svg { transition: transform var(--dur-base) var(--ease-out); }
+.view:hover svg { transform: translateX(4px); }
+
+@media (max-width: 799px) {
+  .card { grid-template-columns: 96px minmax(0, 1fr); gap: 14px; }
+  .side { grid-column: 1 / -1; grid-template-columns: 1fr auto; align-items: center; justify-items: stretch; text-align: left; padding-top: 12px; border-top: 1px solid var(--border); }
+  .side > :nth-child(2) { grid-column: 1 / -1; grid-row: 2; }
+  .view { grid-row: 1; grid-column: 2; }
+}

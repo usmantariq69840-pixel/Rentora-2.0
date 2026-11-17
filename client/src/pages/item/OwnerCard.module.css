@@ -1,0 +1,7 @@
+.card { display: flex; align-items: center; gap: var(--space-4); padding: var(--space-6); background: var(--gradient-card); border: 1px solid var(--border); border-radius: var(--radius-lg); box-shadow: var(--shadow-card); }
+.avatar { display: grid; place-items: center; flex: none; width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, var(--navy-900), var(--teal-700)); color: #fff; font-size: 1.5rem; font-weight: 700; }
+.info { min-width: 0; display: grid; gap: 4px; }
+.info p { font-size: var(--text-small); color: var(--text-secondary); }
+.info ul { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+.info li { display: inline-flex; align-items: center; gap: 5px; height: 24px; padding: 0 10px; border-radius: var(--radius-pill); background: var(--info-bg); color: var(--info); font-size: var(--text-caption); font-weight: 600; }
+.none { background: var(--surface-muted) !important; color: var(--text-secondary) !important; }

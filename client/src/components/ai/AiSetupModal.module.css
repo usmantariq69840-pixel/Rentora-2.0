@@ -1,0 +1,7 @@
+.alert { margin-bottom: 14px; padding: 12px 14px; border-radius: var(--radius-md); background: var(--danger-bg); color: var(--danger); font-size: var(--text-small); font-weight: 500; animation: fadeUp 240ms var(--ease-out); }
+.locked { display: flex; gap: 14px; align-items: flex-start; padding: 16px; border-radius: var(--radius-lg); background: var(--surface-muted); font-size: var(--text-small); color: var(--text-secondary); }
+.locked p + p { margin-top: 6px; }
+.locked strong { color: var(--text-primary); }
+.locked code { padding: 1px 6px; border-radius: 6px; background: var(--surface); border: 1px solid var(--border); font-size: 0.8125rem; color: var(--navy-900); }
+.icon { display: grid; place-items: center; flex: none; width: 44px; height: 44px; border-radius: 12px; background: var(--teal-100); color: var(--teal-700); }
+.action { margin-top: 12px !important; }

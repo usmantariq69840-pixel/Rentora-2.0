@@ -1,0 +1,26 @@
+.nav { border-top: 1px solid var(--border); }
+.list {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 52px;
+  overflow-x: auto;
+}
+.chip {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 36px;
+  padding: 0 14px;
+  border-radius: var(--radius-pill);
+  font-size: var(--text-small);
+  font-weight: 550;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  transition: background var(--dur-fast) ease, color var(--dur-fast) ease, transform var(--dur-base) var(--ease-out);
+}
+.chip svg { transition: transform var(--dur-base) var(--ease-spring); }
+.chip:hover { background: var(--surface-muted); color: var(--text-primary); }
+.chip:hover svg { transform: scale(1.2) rotate(-6deg); }
+.active, .active:hover { background: var(--teal-100); color: var(--teal-800); }
